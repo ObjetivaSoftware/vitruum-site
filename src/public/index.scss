@@ -1,5 +1,6 @@
 @import "font.scss";
 @import "variables.scss";
+@import "politica.scss";
 
 body {
 	display: block;
@@ -8,22 +9,9 @@ body {
 	margin: 0;
 }
 
-/* header {
-	grid-area: header;
-}
-
-main {
-	grid-area: main;
-}
-
-footer {
-	grid-area: footer;
-} */
-
-
 @media (max-width: 1023px) {
 
-	header {
+	.header_index {
 		width: 100%;
 		display: flex;
 		flex-direction: row;
@@ -44,13 +32,13 @@ footer {
 				height: calc(400px / 6.5);
 			}
 		}
-
-		
 	}
 
-	main {
+	.main_index {
 		display: block;
 		width: 100%;
+		box-sizing: border-box;
+		padding: 0;
 
 		& .section_stores {
 			width: 100%;
@@ -62,8 +50,8 @@ footer {
 			align-items: center;
 			padding: 3rem 1rem;
 			box-sizing: border-box;
-			background: linear-gradient(to top, $colorPrimary, transparent 40%);
-			
+			background: linear-gradient(to top, $colorTerciary, transparent 40%);
+
 			& .bg_header {
 				position: absolute;
 				top: 0%;
@@ -82,8 +70,6 @@ footer {
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
-				align-items: center;
-				text-align: center;
 				gap: 1rem;
 
 				& h1 {
@@ -100,17 +86,17 @@ footer {
 
 					& p {
 						background-color: $colorSecondary;
-						color: $colorPrimary;
-						font-size: .85rem;
+						color: $colorTerciary;
+						font-size: 1rem;
 						font-weight: 400;
 						font-style: italic;
 						margin: 0;
-						padding: .7rem 3rem;
+						padding: $paddingBtns;
 						border-radius: $borderRadius;
 						border: solid 1px transparent;
 
 						&:active {
-							background-color: $colorPrimary;
+							background-color: $colorTerciary;
 							color: $colorSecondary;
 							border-color: $colorSecondary;
 						}
@@ -123,7 +109,7 @@ footer {
 			display: block;
 			width: 100%;
 			box-sizing: border-box;
-			padding: 2rem;
+			padding: 3rem 2rem;
 
 			& .container_sobre {
 				display: grid;
@@ -136,18 +122,19 @@ footer {
 					width: 100%;
 
 					& h2 {
-						color: $colorPrimary;
+						color: $colorTerciary;
 						font-size: 1.3rem;
+						margin: 0;
 					}
 
 					& p {
-						color: $colorPrimary;
+						color: $colorTerciary;
 						font-weight: 400;
-						font-size: .9rem;
+						font-size: 1rem;
 					}
 				}
 
-				& .img_sobre {
+				& .img_e_btnisnta {
 					width: 100%;
 					display: block;
 					box-sizing: border-box;
@@ -158,12 +145,14 @@ footer {
 						height: calc(450px / 1.5);
 						margin: auto;
 						max-width: 90vw;
+						-webkit-user-drag: none;
 					}
 
 					& a {
 						text-decoration: none;
 						width: fit-content;
 						margin: auto;
+
 						& p {
 							width: fit-content;
 							background-color: $colorPrimary;
@@ -172,16 +161,16 @@ footer {
 							font-weight: 400;
 							font-style: italic;
 							margin: 0 auto;
-							padding: .5rem 2rem;
+							padding: $paddingBtns;
 							border-radius: $borderRadius;
 							border: solid 1px transparent;
 
 							& svg {
 								vertical-align: top;
-								width: 1.2rem;
-								height: 1.2rem;
+								width: 1.3rem;
+								height: 1.3rem;
 							}
-	
+
 							&:active {
 								background-color: darken($colorPrimary, 5);
 							}
@@ -189,6 +178,222 @@ footer {
 					}
 				}
 			}
+		}
+
+		& .section_lgpd {
+			display: block;
+			width: 100%;
+			background-color: $gray1;
+			box-sizing: border-box;
+			padding: 3rem 2rem;
+
+			& .container_lgpd {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 3rem;
+
+				& .img_lgpd {
+					width: 100%;
+					display: block;
+					box-sizing: border-box;
+					text-align: center;
+
+					& img {
+						width: calc(450px / 1.5);
+						height: calc(450px / 1.5);
+						margin: auto;
+						max-width: 90vw;
+						-webkit-user-drag: none;
+					}
+				}
+
+				& .conteudo {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					gap: 4rem;
+
+					& h4 {
+						color: $colorSecondary;
+						font-size: 1.4rem;
+						font-weight: 400;
+						margin: 0;
+
+						& strong {
+							color: $colorPrimary;
+							font-weight: 600;
+
+							& span {
+								vertical-align: super;
+								font-size: 1.1rem;
+							}
+						}
+					}
+
+					& p {
+						text-align: center;
+						color: white;
+						font-size: 1rem;
+						font-weight: 400;
+						margin: 0;
+
+						& a {
+							color: white;
+						}
+					}
+				}
+			}
+		}
+
+		& .section_atendimento {
+			display: block;
+			width: 100%;
+			background-color: $colorTerciary;
+			box-sizing: border-box;
+			padding: 3rem 2rem;
+
+			& .container_atendimento {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				gap: 2.5rem;
+				width: 100%;
+				box-sizing: border-box;
+				padding: 0;
+
+				& .conteudo {
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					gap: 1rem;
+
+					& h4 {
+						font-size: 1.4rem;
+						font-weight: 600;
+						margin: 0;
+						color: $colorQuarterly;
+						text-shadow: 1px 1px 3px rgba(black, .3);
+
+						& span {
+							vertical-align: super;
+							font-size: 1.1rem;
+						}
+					}
+
+					& p {
+						font-size: .9rem;
+						color: $colorSecondary;
+						font-weight: 400;
+						margin: 0;
+						line-height: 1.5rem;
+					}
+				}
+
+				& a {
+					text-decoration: none;
+					width: 100%;
+					margin: auto;
+
+					& p {
+						background-color: $colorQuarterly;
+						color: $colorTerciary;
+						font-size: .9rem;
+						font-weight: 400;
+						font-style: italic;
+						margin: 0 auto;
+						padding: .7rem 0;
+						border-radius: $borderRadius;
+						text-align: center;
+
+						& svg {
+							vertical-align: bottom;
+							width: 1.2rem;
+							height: 1.2rem;
+							fill: $colorTerciary;
+						}
+
+						&:active {
+							background-color: darken($colorQuarterly, 5);
+						}
+					}
+				}
+			}
+		}
+
+		& .section_duvidas {
+			display: block;
+			width: 100%;
+			background-color: $colorSecondary;
+			box-sizing: border-box;
+			padding: 3rem 2rem;
+
+			& .container_duvidas {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				gap: 1rem;
+				width: 100%;
+				box-sizing: border-box;
+				padding: 0;
+
+				& .conteudo {
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+
+					& h4 {
+						font-size: 1rem;
+						font-weight: 600;
+						margin: 0 0 .5rem 0;
+						color: $colorTerciary;
+
+						& span {
+							vertical-align: super;
+							font-size: 1.1rem;
+						}
+					}
+
+					& p {
+						font-size: 1rem;
+						color: $gray2;
+						font-weight: 400;
+						margin: 0 0 1.5rem 0;
+						line-height: 1.5rem;
+
+						& a {
+							color: $colorTerciary;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.footer_index {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 1rem;
+
+		& p {
+			font-size: .7rem;
+			font-weight: 400;
+			color: $colorTerciary;
+			text-align: center;
+			margin: 0;
+			line-height: 1.5rem;
+
+			& i {
+				vertical-align: super;
+				font-style: normal;
+				font-size: .6rem;
+			}
+		}
+
+		& a {
+			text-decoration: none;
 		}
 	}
 }

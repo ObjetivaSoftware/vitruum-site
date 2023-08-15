@@ -1,0 +1,162 @@
+.header_politica {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	z-index: 9;
+	box-shadow: 5px 0 10px 1px rgba(black, .1);
+	padding: .5rem;
+	box-sizing: border-box;
+
+	& .img_politica {
+		width: fit-content;
+		margin: 0;
+
+		& img {
+			width: calc(1100px / 5);
+			height: calc(400px / 5);
+			max-width: 70vw;
+		}
+	}
+}
+
+.main_politica {
+	.politica_de_privacidade {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 3rem 0;
+		max-width: 80vw;
+		margin: auto;
+	
+		& .btn_voltar {
+			display: block;
+			width: fit-content;
+			margin-bottom: 1rem;
+	
+			& a {
+				text-decoration: none;
+				width: fit-content;
+				display: block;
+				& p {
+					color: $gray1;
+					font-size: .9rem;
+					font-weight: 500;
+					background-color: $colorSecondary;
+					border: solid 1px lightgrey;
+					margin: 0;
+					padding: .3rem 1rem;
+					border-radius: $borderRadius;
+					transition: border-color .25s ease-in-out;
+					
+					& svg {
+						width: .9rem;
+						height: .9rem;
+						fill: $colorPrimary;
+						vertical-align: middle;
+					}
+	
+					&:hover {
+						border-color: $colorPrimary;
+					}
+				}
+			}
+		}
+	
+		& .container_politica {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+	
+			& h1 {
+				color: $colorTerciary;
+				font-size: 1.2rem;
+				font-weight: 600;
+				text-align: center;
+			}
+
+			& p {
+				color: $gray1;
+				font-size: .9rem;
+				font-weight: 400;
+				line-height: 1.5rem;
+				text-align: justify;
+
+				& span {
+					color: $colorTerciary;
+				}
+			}
+		}
+	}
+}
+
+.footer_politica {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 2rem 1rem;
+
+	& p {
+		font-size: .8rem;
+		font-weight: 400;
+		color: $colorTerciary;
+		text-align: center;
+		margin: 0;
+		line-height: 1.5rem;
+
+		& i {
+			vertical-align: super;
+			font-style: normal;
+			font-size: .6rem;
+		}
+		
+		& a {
+			text-decoration: none;
+			transition: color .25s ease-in-out;
+		}
+
+		&:hover{
+			a {
+				color: $colorPrimary;
+			}
+		}
+	}
+}
+
+@media (max-width: 1023px) {
+	.header_politica {
+		padding: 0;
+
+		& .img_politica {
+			width: fit-content;
+			margin: 0;
+
+			& img {
+				width: calc(1100px / 6.5);
+				height: calc(400px / 6.5);
+				max-width: 70vw;
+			}
+		}
+	}
+
+	.main_politica {
+		.politica_de_privacidade {
+			max-width: 85vw;
+
+			& .btn_voltar {
+				& a {
+					& p {
+						font-size: .8rem;
+						
+						& svg {
+							width: .6rem;
+							height: .6rem;
+							vertical-align: baseline;
+						}
+					}
+				}
+			}
+		}
+	}
+}
