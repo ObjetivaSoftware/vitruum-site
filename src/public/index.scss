@@ -1,4 +1,4 @@
-@import "font.scss";
+/* @import "font.scss"; */
 @import "variables.scss";
 @import "politica.scss";
 
@@ -134,8 +134,12 @@ body {
 	}
 
 	& .section_sobre {
-		display: block;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
+		height: 100vh;
 		box-sizing: border-box;
 		padding: 7rem 0;
 		max-width: 70vw;
@@ -144,7 +148,7 @@ body {
 		& .container_sobre {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			gap: 1rem;
+			gap: 2rem;
 			align-items: center;
 
 			& .texto {
@@ -155,7 +159,7 @@ body {
 				& h2 {
 					color: $colorTerciary;
 					font-size: 2.8rem;
-					margin: 0 0 2rem 0;
+					margin: 0 0 4rem 0;
 				}
 
 				& p {
@@ -163,6 +167,7 @@ body {
 					font-weight: 400;
 					font-size: 1.8rem;
 					line-height: 2.5rem;
+					margin: 0 0 4rem 0;
 				}
 			}
 
@@ -193,7 +198,7 @@ body {
 						font-size: 1.2rem;
 						font-weight: 400;
 						font-style: italic;
-						margin: 1rem auto;
+						margin: 2rem auto;
 						padding: $paddingBtns;
 						border-radius: $borderRadius;
 						border: solid 1px transparent;
@@ -220,7 +225,7 @@ body {
 		justify-content: flex-end;
 		align-items: center;
 		width: 100%;
-		height: 95vh;
+		height: 100vh;
 		overflow: hidden;
 		background-color: $gray1;
 		box-sizing: border-box;
@@ -283,7 +288,7 @@ body {
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		height: 80vh;
+		height: 100vh;
 		overflow: hidden;
 		background-color: $colorTerciary;
 		box-sizing: border-box;
@@ -306,7 +311,7 @@ body {
 			& .cont_left {
 				display: grid;
 				grid-template-columns: 1fr;
-				gap: 5rem;
+				gap: 8rem;
 				padding-right: 5rem;
 				box-sizing: border-box;
 
@@ -590,7 +595,6 @@ body {
 		}
 
 		& .section_lgpd {
-			height: 110vh;
 			padding: 3rem 2rem;
 	
 			& .container_lgpd {
