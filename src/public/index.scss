@@ -321,7 +321,7 @@ body {
 					flex-direction: column;
 					gap: 1rem;
 	
-					& h4 {
+					& h3 {
 						font-size: 1.8rem;
 						font-weight: 600;
 						color: $colorQuarterly;
@@ -357,7 +357,7 @@ body {
 					flex-direction: column;
 					gap: 1rem;
 	
-					& h4 {
+					& h3 {
 						font-size: 1.8rem;
 						font-weight: 600;
 						color: $colorQuarterly;
@@ -444,7 +444,7 @@ body {
 					flex-direction: column;
 					justify-content: space-between;
 	
-					& h4 {
+					& h3 {
 						font-size: 1.2rem;
 						font-weight: 600;
 						margin: 0 0 .5rem 0;
@@ -628,7 +628,7 @@ body {
 					padding-right: 3rem;
 
 					& .conteudo {
-						& h4 {
+						& h3 {
 							font-size: 1.5rem;
 						}
 		
@@ -643,7 +643,7 @@ body {
 					padding-left: 3rem;
 
 					& .conteudo {
-						& h4 {
+						& h3 {
 							font-size: 1.5rem;
 						}
 		
@@ -671,7 +671,7 @@ body {
 					padding-right: 3rem;
 	
 					& .conteudo {
-						& h4 {
+						& h3 {
 							font-size: 1.1rem;
 						}
 		
@@ -801,7 +801,7 @@ body {
 					padding-right: 2.5rem;
 
 					& .conteudo {
-						& h4 {
+						& h3 {
 							font-size: 1.3rem;
 						}
 		
@@ -816,7 +816,7 @@ body {
 					padding-left: 2.5rem;
 					
 					& .conteudo {
-						& h4 {
+						& h3 {
 							font-size: 1.3rem;
 						}
 		
@@ -843,7 +843,7 @@ body {
 					padding-right: 2rem;
 	
 					& .conteudo {
-						& h4 {
+						& h3 {
 							font-size: 1.1rem;
 						}
 		
@@ -1149,7 +1149,7 @@ body {
 						justify-content: space-between;
 						gap: 1rem;
 
-						& h4 {
+						& h3 {
 							font-size: 1.4rem;
 							font-weight: 600;
 							margin: 0;
@@ -1175,7 +1175,7 @@ body {
 				& .cont_right {
 					padding-left: 0;
 					& .conteudo {
-						& h4 {
+						& h3 {
 							font-size: 1.4rem;
 							font-weight: 600;
 							margin: 0;
@@ -1258,7 +1258,7 @@ body {
 						flex-direction: column;
 						justify-content: space-between;
 
-						& h4 {
+						& h3 {
 							font-size: 1rem;
 							font-weight: 600;
 							margin: 0 0 .5rem 0;
@@ -1284,6 +1284,17 @@ body {
 
 				& .cont_right {
 					padding-left: 0;
+
+					& h3 {
+						font-size: 1rem;
+						font-weight: 600;
+						margin: 0 0 .5rem 0;
+
+						& span {
+							vertical-align: super;
+							font-size: 1.1rem;
+						}
+					}
 	
 					& p {
 						font-size: .9rem;
