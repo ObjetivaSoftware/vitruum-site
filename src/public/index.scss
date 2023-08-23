@@ -453,7 +453,7 @@ body {
 	
 					& p {
 						font-size: 1rem;
-						color: $gray2;
+						color: lighten(black, 20);
 						font-weight: 400;
 						margin: 0;
 						line-height: 1.5rem;
@@ -475,7 +475,7 @@ body {
 
 				& p {
 					font-size: 1rem;
-					color: $gray2;
+					color: lighten(black, 20);
 					font-weight: 400;
 					margin: 0;
 					line-height: 1.5rem;
@@ -502,9 +502,9 @@ body {
 	padding: 3rem 0;
 
 	& p {
-		font-size: .8rem;
+		font-size: .9rem;
 		font-weight: 400;
-		color: $colorTerciary;
+		color: lighten(black, 20);
 		text-align: center;
 		margin: 0;
 		line-height: 1.5rem;
@@ -518,6 +518,10 @@ body {
 
 	& a {
 		text-decoration: none;
+		color: lighten(black, 20);
+		&:hover {
+			color: $colorTerciary;
+		}
 	}
 }
 
@@ -882,10 +886,18 @@ body {
 	}
 	
 	.header_index {
+		position: absolute;
+		top: 0%;
+		left: 25%;
+		transform: translate(-25%, 0%);
+		display: block;
+		width: 100%;
+		
 		& .logo_header {
 			width: calc(1600px / 8);
 			height: calc(400px / 8);
 			padding: 1.5rem 0;
+			margin: auto;
 
 			& img {
 				width: calc(1600px / 8);
@@ -972,6 +984,7 @@ body {
 		& .section_sobre {
 			display: block;
 			width: 100%;
+			height: fit-content;
 			box-sizing: border-box;
 			padding: 3rem 2rem;
 			max-width: inherit;
@@ -989,7 +1002,8 @@ body {
 					& h2 {
 						color: $colorTerciary;
 						font-size: 1.3rem;
-						margin: 0;
+						margin: 0 0 2rem 0;
+						line-height: 2rem;
 					}
 
 					& p {
@@ -997,6 +1011,7 @@ body {
 						font-weight: 400;
 						font-size: 1rem;
 						line-height: 1.8rem;
+						margin: 0 0 2rem 0;
 					}
 				}
 
@@ -1125,6 +1140,7 @@ body {
 
 				& .cont_left {
 					padding-right: 0;
+					gap: 4rem;
 
 					& .conteudo {
 						width: 100%;
@@ -1246,7 +1262,6 @@ body {
 							font-size: 1rem;
 							font-weight: 600;
 							margin: 0 0 .5rem 0;
-							color: $colorTerciary;
 
 							& span {
 								vertical-align: super;
@@ -1255,8 +1270,7 @@ body {
 						}
 
 						& p {
-							font-size: 1rem;
-							color: $gray2;
+							font-size: .9rem;
 							font-weight: 400;
 							margin: 0 0 1.5rem 0;
 							line-height: 1.5rem;
@@ -1272,7 +1286,7 @@ body {
 					padding-left: 0;
 	
 					& p {
-						font-size: 1rem;
+						font-size: .9rem;
 						margin: 0;
 						line-height: 1.8rem;
 					}
@@ -1288,9 +1302,8 @@ body {
 		padding: 1rem;
 
 		& p {
-			font-size: .7rem;
+			font-size: .9rem;
 			font-weight: 400;
-			color: $colorTerciary;
 			text-align: center;
 			margin: 0;
 			line-height: 1.5rem;
