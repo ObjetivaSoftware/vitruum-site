@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vitruum · Aplicativo de vistorias imobiliárias</title>
+	<meta name="theme-color" content="#4c137a">
+	<meta name="description"
+		content="O presente Termo e Condição de Uso tem por objetivo regular para o VITRUUM a cessão do uso do sistema USUÁRIO, disponibilizado no site: vitruum.com.br">
+	<meta name="robots" content="noindex, nofollow">
+	<meta property="og:url" content="https://vitruum.com.br/">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Vitruum vistorias imobiliárias">
+	<meta property="og:description"
+		content="Somos um app de vistorias imobiliárias confiável e pensado para facilitar sua vida. Ofereça a melhor vistoria imobiliária para seus clientes.">
+	<meta property="og:image" content="https://vitruum.com.br/jnh/logo/favicon.jpg">
+	<meta property="og:image:alt" content="Icon Vitruum">
+	<meta property="og:site_name" content="Vitruum vistorias imobiliárias">
+	<meta property="og:locale" content="pt_BR">
+	<link rel="icon" sizes="350x350" href="/jnh/logo/favicon.jpg">
+	<link rel="apple-touch-icon" href="/jnh/logo/favicon.jpg">
+	<link rel="stylesheet" href="/css/site.min.css">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V7HD3Q676T"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'G-V7HD3Q676T');
+</script>
+
+<body>
+	<header class="exclusao_header">
+		<div class="img_header">
+			<a href="/">
+				<img src="/jnh/logo/logo_roxa.png" alt="Vitruum">
+			</a>
+		</div>
+	</header>
+	<main class="main_exclusao">
+		<div class="exclusao_acoes">
+			<div class="btn_voltar">
+				<a href="/">
+					<p>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+						</svg>&nbsp;&nbsp;Voltar
+					</p>
+				</a>
+			</div>
+			<div class="container_exclusao">
+				<div class="conteudo">
+					<h1>Para <strong>excluírmos</strong> os seus dados preencha o formulário abaixo</h1>
+				</div>
+				<br>
+				<form id="meuFormulario" class="form" action="https://api.vitruum.com.br/exclusao-informacao"
+					method="post">
+					<label class="label" for="nome">Nome:</label>
+					<input class="input" type="text" id="nome" name="nome" required>
+					<br>
+					<label class="label" for="email">Email:</label>
+					<input class="input" type="email" id="email" name="email" required>
+					<br>
+					<label class="label" for="telefone">Telefone:</label>
+					<input class="input" type="text" id="telefone" name="telefone" maxlength="15" required>
+					<br>
+					<label class="label" for="observacoes">Observações:</label>
+					<textarea class="textarea" id="observacoes" name="observacoes" rows="3" cols="50" maxlength="1000"
+						wrap="soft"></textarea>
+					<span id="contador" style="align-self: self-end;">0/1000</span>
+
+					<br>
+					<div class="checkbox-container">
+						<input class="checkbox" type="checkbox" id="confirmacao" name="confirmacao"
+							onchange="habilitarBotao()" required>
+						<label class="checkbox-label" for="confirmacao">Desejo apagar meus dados</label>
+					</div>
+					<br>
+					<button type="submit" id="submitBtn" disabled>Enviar</button>
+				</form>
+			</div>
+		</div>
+
+	</main>
+	<footer class="footer_exclusao">
+		<p><strong>Vitruum<i>®</i> <span id="ano_atual"></span></strong> · Todos os direitos reservados · <a
+				href="/politica-de-privacidade.html">Política de privacidade.</a></p>
+	</footer>
+</body>
+
+
+<script>
+	// Obtém a referência para o textarea e o contador de caracteres
+	var textarea = document.getElementById('observacoes');
+	var contador = document.getElementById('contador');
+
+	// Adiciona um event listener para o evento input no textarea
+	textarea.addEventListener('input', function () {
+		// Obtém o número de caracteres digitados
+		var caracteresDigitados = textarea.value.length;
+		// Obtém o número máximo de caracteres permitidos
+		var maxCaracteres = textarea.getAttribute('maxlength');
+
+		// Atualiza o contador de caracteres
+		contador.textContent = caracteresDigitados + '/' + maxCaracteres;
+	});
+</script>
+
+<script>
+
+	var checkbox = document.getElementById("confirmacao");
+	checkbox.addEventListener('input', function(){
+		//
+		checkbox.checked
+	})
+	
+
+</script>
+
+<script>
+	function validarFormulario() {
+		var nome = document.getElementById("nome");
+		var email = document.getElementById("email");
+		var telefone = document.getElementById("telefone");
+
+		if (!nome.checkValidity()) {
+			alert("Por favor, insira um nome válido.");
+			return false;
+		}
+		if (!email.checkValidity()) {
+			alert("Por favor, insira um email válido.");
+			return false;
+		}
+		if (!telefone.checkValidity()) {
+			alert("Por favor, insira um telefone válido.");
+			return false;
+		}
+		return true;
+	}
+</script>
+
+<script>
+	function habilitarBotao() {
+		var checkbox = document.getElementById("confirmacao");
+		var submitBtn = document.getElementById("submitBtn");
+		var nome = document.getElementById("nome");
+		var email = document.getElementById("email");
+		var telefone = document.getElementById("telefone");
+
+		if (checkbox.checked && validarFormulario()) {
+			submitBtn.disabled = false;
+		} else {
+			submitBtn.disabled = true;
+		}
+	}
+
+	
+</script>
+
+<script>
+
+	var telefoneInput = document.getElementById('telefone');
+	telefoneInput.addEventListener('input', function (e) {
+		var valor = e.target.value.replace(/\D/g, '');
+		var padrao = /^(\d{2})(\d{4,5})(\d{4})$/;
+		if (padrao.test(valor)) {
+			e.target.value = '(' + RegExp.$1 + ') ' + RegExp.$2 + '-' + RegExp.$3;
+		} else {
+			e.target.value = valor;
+		}
+	});
+</script>
+
+
+
+<script>
+	document.addEventListener("DOMContentLoaded", (event) => {
+		var ano_atual = document.getElementById('ano_atual');
+		var ano = new Date().getFullYear();
+		ano_atual.innerHTML = ano;
+	}, true);
+	/*function enviarDadosParaAPI() {
+		var nome = document.getElementById("nome").value;
+		var email = document.getElementById("email").value;
+		var telefone = document.getElementById("telefone").value;
+		var observacoes = document.getElementById("observacoes").value;
+
+		var dados = {
+			nome: nome,
+			email: email,
+			telefone: telefone,
+			observacoes: observacoes
+		};
+
+		var urlAPI = "https://api.vitruum.com.br/exclusao-informacao";
+
+		fetch(urlAPI, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(dados)
+		})
+			.then(response => {
+				if (!response.ok) {
+					throw new Error('Erro ao enviar dados para a API');
+				}
+				return response.json();
+			})
+			.then(data => {
+				console.log('Dados enviados com sucesso:', data);
+			})
+			.catch(error => {
+				console.error('Erro ao enviar dados:', error);
+			});
+	}*/
+</script>
+
+
+</html>
+
+
