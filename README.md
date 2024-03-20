@@ -12,3 +12,23 @@
     gtag('config', 'G-V7HD3Q676T');
     </script>
 ```
+
+## Para transpilar os arquivos scss
+
+* Verificar se pussui o `sass` instalado e no path
+    * Utilize o seguinte comando: `$ node sass`. Pode ser utilizado por outras linguagens.
+* Após isso execute o próximo comando no terminal.
+```BASH
+$ sass src/public/index.scss:src/view/css/site.min.css --watch --style=compress
+```
+
+## Para rodar o server em localhost
+
+* Se estiver na pasta view
+```bash
+php -S localhost:3000 
+```
+* Se estiver na home do projeto
+```bash
+php -S localhost:3000 -t src/view
+```
