@@ -209,6 +209,7 @@ button:disabled {
     outline: none;
     margin-right: 10px;
     vertical-align: middle;
+    position: relative;
     cursor: pointer;
 }
 
@@ -226,10 +227,11 @@ button:disabled {
 .checkbox:checked::before {
     content: '\2713';
     font-size: 1.2em;
-    color: #7f0cc4;
-    position: absolute;
-    top: 0;
-    left: 0;
+    color: white;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
 }
 
 
