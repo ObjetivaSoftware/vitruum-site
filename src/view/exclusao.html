@@ -57,7 +57,8 @@
 					<h1>Para <strong>excluírmos</strong> os seus dados preencha o formulário abaixo</h1>
 				</div>
 				<br>
-				<form id="meuFormulario" class="form" action="#" method="post" onsubmit="enviarDadosParaAPI(); return false;">
+				<form id="meuFormulario" class="form" action="#" method="post"
+					onsubmit="enviarDadosParaAPI(); return false;">
 					<label class="label" for="acc_nome">Nome:</label>
 					<input class="input" type="text" id="acc_nome" name="nome" required>
 					<br>
@@ -65,7 +66,7 @@
 					<input class="input" type="email" id="acc_email" name="email" required>
 					<br>
 					<label class="label" for="telefone">Telefone:</label>
-					<input class="input" type="text" id="telefone" name="telefone" maxlength="15" required>
+					<input class="input" type="text" id="telefone" name="telefone" maxlength="15">
 					<br>
 					<label class="label" for="observacoes">Observações:</label>
 					<textarea class="textarea" id="observacoes" name="observacoes" rows="3" cols="50" maxlength="1000"
@@ -75,7 +76,7 @@
 					<br>
 					<div class="checkbox-container">
 						<input class="checkbox" type="checkbox" id="confirmacao" name="confirmacao"
-							onchange="habilitarBotao()" required>
+							onclick="habilitarBotao()" required>
 						<label class="checkbox-label" for="confirmacao">Desejo apagar meus dados</label>
 					</div>
 					<br>
@@ -93,71 +94,32 @@
 
 
 <script>
-	// Obtém a referência para o textarea e o contador de caracteres
 	var textarea = document.getElementById('observacoes');
 	var contador = document.getElementById('contador');
 
-	// Adiciona um event listener para o evento input no textarea
 	textarea.addEventListener('input', function () {
-		// Obtém o número de caracteres digitados
 		var caracteresDigitados = textarea.value.length;
-		// Obtém o número máximo de caracteres permitidos
 		var maxCaracteres = textarea.getAttribute('maxlength');
-
-		// Atualiza o contador de caracteres
 		contador.textContent = caracteresDigitados + '/' + maxCaracteres;
 	});
-</script>
-
-<script>
-
-	var checkbox = document.getElementById("confirmacao");
-	checkbox.addEventListener('input', function(){
-		//
-		checkbox.checked
-	})
-	
-
-</script>
-
-<script>
-	function validarFormulario() {
-		var nome = document.getElementById("nome");
-		var email = document.getElementById("email");
-		var telefone = document.getElementById("telefone");
-
-		if (!nome.checkValidity()) {
-			alert("Por favor, insira um nome válido.");
-			return false;
-		}
-		if (!email.checkValidity()) {
-			alert("Por favor, insira um email válido.");
-			return false;
-		}
-		if (!telefone.checkValidity()) {
-			alert("Por favor, insira um telefone válido.");
-			return false;
-		}
-		return true;
-	}
 </script>
 
 <script>
 	function habilitarBotao() {
 		var checkbox = document.getElementById("confirmacao");
 		var submitBtn = document.getElementById("submitBtn");
-		var nome = document.getElementById("nome");
-		var email = document.getElementById("email");
-		var telefone = document.getElementById("telefone");
+		var nome = document.getElementById("acc_nome");
+		var email = document.getElementById("acc_email");
 
-		if (checkbox.checked && validarFormulario()) {
-			submitBtn.disabled = false;
+		console.log(nome, email, nome.value, email.value);
+		if (nome && email && nome.value.trim() !== "" && email.value.trim() !== "" && nome.checkValidity() && email.checkValidity()) {
+			submitBtn.disabled = !checkbox.checked;
 		} else {
+			checkbox.checked = false;
 			submitBtn.disabled = true;
+			alert("Por favor, preencha os campos obrigatórios: Nome e Email.");
 		}
 	}
-
-	
 </script>
 
 <script>
@@ -187,8 +149,6 @@
 
 <script>
 	function enviarDadosParaAPI() {
-		//https://api.vitruum.com.br/exclusao-informacao
-		//https://api.vitruum.com.br/solicita-exclusao
 		var nome = document.getElementById("acc_nome").value;
 		var email = document.getElementById("acc_email").value;
 		var telefone = document.getElementById("telefone").value;
@@ -200,9 +160,6 @@
 			telefone: telefone,
 			observacoes: observacoes
 		};
-
-		//var urlAPI = "http://192.168.1.118:3000/solicita-exclusao";
-		//var urlAPI = "http://api.vitruum.local/solicita-exclusao";
 		var urlAPI = "https://api.vitruum.com.br/solicita-exclusao";
 
 		fetch(urlAPI, {
@@ -211,26 +168,25 @@
 				"Content-Type": "application/json",
 				"token": 123,
 				"Accept": "application/json",
-				//"Access-Control-Allow-Origin":"no-cors",
 			},
 			body: JSON.stringify(dados)
 		})
 			.then(response => {
 				if (!response.ok) {
-					throw new Error('Erro ao enviar dados para a API');
+					alert('Ocorreu um erro ao enviar dados');
 				}
 				return response.json();
 			})
 			.then(data => {
-				console.log('Dados enviados com sucesso:', data);
+				if (data['r'] === 'ok') {
+					alert(data['data']);
+				}
 			})
 			.catch(error => {
-				console.error('Erro ao enviar dados:', error);
+				alert('Ocorreu um erro ao enviar dados. Tente novamente mais tarde.');
 			});
 	}
 </script>
 
 
 </html>
-
-
