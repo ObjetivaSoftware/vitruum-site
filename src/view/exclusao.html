@@ -59,11 +59,11 @@
 				<br>
 				<form id="meuFormulario" class="form" action="#" method="post"
 					onsubmit="enviarDadosParaAPI(); return false;">
-					<label class="label" for="acc_nome">Nome:</label>
-					<input class="input" type="text" id="acc_nome" name="nome" required>
+					<label class="label" for="nome">Nome:</label>
+					<input class="input" type="text" id="nome" name="nome" required>
 					<br>
-					<label class="label" for="acc_email">Email:</label>
-					<input class="input" type="email" id="acc_email" name="email" required>
+					<label class="label" for="email">Email:</label>
+					<input class="input" type="email" id="email" name="email" required>
 					<br>
 					<label class="label" for="telefone">Telefone:</label>
 					<input class="input" type="text" id="telefone" name="telefone" maxlength="15">
@@ -108,8 +108,8 @@
 	function habilitarBotao() {
 		var checkbox = document.getElementById("confirmacao");
 		var submitBtn = document.getElementById("submitBtn");
-		var nome = document.getElementById("acc_nome");
-		var email = document.getElementById("acc_email");
+		var nome = document.getElementById("nome");
+		var email = document.getElementById("email");
 
 		console.log(nome, email, nome.value, email.value);
 		if (nome && email && nome.value.trim() !== "" && email.value.trim() !== "" && nome.checkValidity() && email.checkValidity()) {
@@ -149,14 +149,14 @@
 
 <script>
 	function enviarDadosParaAPI() {
-		var nome = document.getElementById("acc_nome").value;
-		var email = document.getElementById("acc_email").value;
+		var nome = document.getElementById("nome").value;
+		var email = document.getElementById("email").value;
 		var telefone = document.getElementById("telefone").value;
 		var observacoes = document.getElementById("observacoes").value;
 
 		var dados = {
-			acc_nome: nome,
-			acc_email: email,
+			nome: nome,
+			email: email,
 			telefone: telefone,
 			observacoes: observacoes
 		};
